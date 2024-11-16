@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type="image/png" href="/img/favicon.png" rel="icon" sizes="96x96">
+<link href="https://ppdb.karanganyarkab.go.id/assets/b11bafd9/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://ppdb.karanganyarkab.go.id/assets/b4b280f5/themes/smoothness/jquery-ui.css" rel="stylesheet">
+<link href="https://ppdb.karanganyarkab.go.id/assets/040705e8/css/bootstrap.css" rel="stylesheet">
+<link href="https://ppdb.karanganyarkab.go.id/assets/c844cf48/css/theme.min.css" rel="stylesheet">
+<link href="https://ppdb.karanganyarkab.go.id/assets/c844cf48/css/admin-forms.min.css" rel="stylesheet">
+<style>
+.carousel-indicators{
+    text-shadow:0 2px 3px rgba(0,0,0,0.6);
+    bottom:0;
+}
+.gambar-header ol{
+    margin-bottom:0;
+}
+.carousel-indicators li{
+    border:1px solid #3C8DBC;
+}
+.carousel-indicators .active{
+    background-color: #3C8DBC;
+}</style>
+<style>/* devanagari */
+/*@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Hind Light'), local('Hind-Light'), url(/fonts/5aU19_a8oxmIfMJaERKSjQpf.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}*/
+/* latin-ext */
+/*@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Hind Light'), local('Hind-Light'), url(/fonts/5aU19_a8oxmIfMJaERKSjQpf.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}*/
+/* latin */
+/*@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Hind Light'), local('Hind-Light'), url(/fonts/5aU19_a8oxmIfMJaERKSjQpf.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}*/
+/* devanagari */
+/*@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Hind Medium'), local('Hind-Medium'), url(/fonts/5aU19_a8oxmIfMJaERKSjQpf.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}*/
+/* latin-ext */
+/*@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Hind Medium'), local('Hind-Medium'), url(/fonts/5aU19_a8oxmIfJpbERKSjQpf.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}*/
+/* latin */
+/*@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Hind Medium'), local('Hind-Medium'), url(/fonts/5aU19_a8oxmIfJpbERySjQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}*/
+.marque {
+	font-size: 16px;
+	font-style: italic;
+	font-weight: bold;
+}
+.main-header {
+    background-color: #db3f26;
+    text-align: center;
+}
+
+.header-img {
+    width: 100%;
+    max-width: 1058px;    
+}
+.caption-marquee {
+    font-family: 'Hind', sans-serif;
+    font-size: 14px;
+    width: 100%;
+    color: #F9F9F9;
+    background-color: #263238;
+    padding: 10px 20px;
+    border-top: 4px solid #FFF;
+    bottom: 4px;
+}
+
+.jenjang{
+    width: 300px;
+    display: inline-block;
+    padding: 10px 10px 2px 10px;
+}
+
+.label-jalur{
+    padding: 10px;
+    display: inline-block;
+    cursor:pointer;
+    box-shadow: 0 5px 8px #DDD;
+    position: relative;
+    vertical-align: middle;
+    border-radius: 10px;
+    margin: 0 5px 10px 5px;
+}
+
+.nama-jalur{
+    max-width: 250px;
+    word-wrap: break-word;
+}
+.nama-jalur i{
+    font-size: 30px;
+}
+.nama-jalur b{
+    font-size: 12px;
+}
+
+.label-jalur-tk{
+    border:1px solid #8cb82f; 
+    color: #8cb82f;
+}
+.label-jalur-tk:hover, .label-jalur-tk.active {
+    background-color: #8cb82f;
+    color: #ffffff;
+}
+
+.label-jalur-sd{
+    border:1px solid #e36d5a; 
+    color: #e36d5a;
+}
+.label-jalur-sd:hover, .label-jalur-sd.active{
+    background-color: #e36d5a;
+    color: #ffffff;
+}
+
+.label-jalur-smp{
+    border:1px solid #F9A825; 
+    color: #F9A825;
+}
+.label-jalur-smp:hover, .label-jalur-smp.active {
+    background-color: #F9A825;
+    color: #ffffff;
+}
+
+.tombol-tk{
+    background-color: #FFFFFF;
+    border:1px solid #8cb82f;
+    margin: 2px 2px 2px 0;
+    color: #8cb82f;
+    border-radius: 5px;
+}
+.tombol-tk:hover, .tombol-tk:focus, .tombol-tk.active {
+    background-color: #8cb82f;
+    color: #ffffff;
+}
+
+.tombol-sd{
+    background-color: #FFFFFF;
+    border:1px solid #e36d5a;
+    margin: 2px 2px 2px 0;
+    color: #e36d5a;
+    border-radius: 5px;
+}
+.tombol-sd:hover, .tombol-sd:focus, .tombol-sd.active {
+    background-color: #e36d5a;
+    color: #ffffff;
+}
+
+.tombol-smp{
+    background-color: #FFFFFF;
+    border:1px solid #F9A825;
+    margin: 2px 2px 2px 0;
+    color: #F9A825;
+    border-radius: 5px;
+}
+.tombol-smp:hover, .tombol-smp:focus, .tombol-smp.active {
+    background-color: #F9A825;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 1024px) {
+    .caption-marquee {
+        font-size: 13px;
+    }
+    .label-jalur{
+        border-radius: 20px;
+    }
+    .nama-jalur{
+        font-size: 12px;
+    }
+    .nama-jalur i{
+        font-size: 50px;
+    }
+    .tombol{
+        margin: 1.8px 1.8px 1.8px 0;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+    .jenjang{
+        width: 190px;
+        display: inline-block;
+        padding: 5px 5px 0 5px;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .caption-marquee {
+        padding: 12px 18px;
+        font-size: 12px;
+        border-top-width: 3px;
+        bottom: 4px;
+    }
+    .label-jalur{
+        border-radius: 18px;
+    }
+    .nama-jalur b{
+        font-size: 10px;
+    }
+    .nama-jalur i{
+        font-size: 35px;
+    }
+    .tombol{
+        margin: 1.6px 1.6px 1.6px 0;
+        border-radius: 4.8px;
+        font-size: 11px;
+    }
+    .jenjang{
+        width: 160px;
+        display: inline-block;
+        padding: 5px 5px 0 5px;
+    }
+    .jenjang h2{
+        font-size: 18px;
+    }
+    .jenjang h6{
+        font-size: 9px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .caption-marquee {
+        padding: 6px 14px 0;
+        font-size: 10px;
+        border-top-width: 3px;
+        bottom: 2px;
+    }
+    .marque {
+        font-size: 12px;
+    }
+    .label-jalur{
+        border-radius: 12px;
+    }
+    .nama-jalur b{
+        font-size: 6px;
+    }
+    .nama-jalur i{
+        font-size: 20px;
+    }
+    .tombol{
+        margin: 1.4px 1.4px 1.4px 0;
+        border-radius: 4.6px;
+        font-size: 10px;
+    }
+    .jenjang{
+        width: 120px;
+        display: inline-block;
+        padding: 5px 5px 0 5px;
+    }
+    .jenjang h2{
+        font-size: 16px;
+    }
+    .jenjang h6{
+        font-size: 6px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .fluid-xs {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    .caption-marquee {
+        padding: 4px 10px 0;
+        font-size: 8px;
+        border-top-width: 1px;
+        bottom: 0;
+    }
+    .marque {
+        font-size: 8px;
+    }
+    .label-jalur{
+        border-radius: 12px;
+    }
+    .nama-jalur{
+        font-size: 6px;
+    }
+    .nama-jalur i{
+        font-size: 30px;
+    }
+    .tombol{
+        margin: 1.2px 1.2px 1.2px 0;
+        border-radius: 4.4px;
+        font-size: 9px;
+    }
+    .jenjang{
+        width: 80px;
+        display: inline-block;
+        padding: 5px 5px 0 5px;
+    }
+    .jenjang h2{
+        font-size: 12px;
+    }
+    .jenjang h6{
+        font-size: 4px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .marque {
+        font-size: 6px;
+    }
+    .label-jalur{
+        border-radius: 12px;
+    }
+    .nama-jalur{
+        font-size: 7px;
+    }
+    .nama-jalur i{
+        font-size: 25px;
+    }
+    .tombol{
+        margin: 1px 1px 1px 0;
+        border-radius: 4.2px;
+        font-size: 8px;
+    }
+}
+</style>
+<style>body, .panel-heading{color: #000000;}</style>
+<style>
+    .navbar .nav > li.open > a, 
+    .navbar .nav > li:hover > a, 
+    .navbar .nav > li:focus > a, 
+    .navbar .nav > li.active > a, 
+    .navbar .nav > li > a:hover, 
+    .navbar .nav > li > a:focus{
+        background-color: #37474f;
+        color: #ffffff;
+    }</style>
+<style>
+    .sidebar-menu > li > ul {
+        background-color: #1e282d;
+    }</style>    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>PPDB KABUPATEN KARANGANYAR</title>
+    <meta charset="UTF-8"/>
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
+    <meta name="keywords" content="PPDB KARANGANYAR PPDB KARANGANYAR">
+    <meta name="description" content="Website Resmi PPDB KABUPATEN KARANGANYAR">
+    <meta name="author" content="UPT. Teknologi Informasi dan Komunikasi UNS">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <meta name="csrf-param" content="_csrf-ppdb-salatiga">
+<meta name="csrf-token" content="GY7D0KErIcyaKnzDTWfyVThOvKzuu0ocbJL62WAoTSVh-q-JmR4XoMt6NpAXK4cFDi_1lN-OD0gfw761MGAOaw==">
+    <style type="text/css">
+        @font-face {
+            font-family: "Kumbh";
+            src: url('../../fonts/IBMPlexSans-Regular.ttf')  format('truetype');
+        }
+        body {
+            font-family: 'Kumbh', sans-serif;
+        }
+        .sidebar-menu > li.active > a > span:nth-child(1) {
+            color: #000000;
+        }
+        .sidebar-menu>li:hover:not(.active) {
+            transform: scale(1.0); 
+            transition: all 0.3s;
+        }
+        .sidebar-menu>li:hover>a{
+            background: #FFCA28;
+            color: #000;
+            border-radius: 0px;
+        }
+        .sidebar-menu>li.active>a{
+            background: #FFCA28;
+            color: #fff;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .sidebar-menu>li.active>a{
+            color: #000000;
+        }
+        .main-header{
+            border-radius: 10px;
+        }
+        .header-img{
+            border-radius: 10px;
+        }
+
+        .panel, .panel-body{
+            border-radius: 10px;
+        }
+
+        .panel-body {
+            position: relative;
+            padding: 15px;
+            border: 1px solid #e2e2e2;
+            border-top-right-radius: 0 !important;
+            border-top-left-radius: 0 !important;
+        }
+
+        .label-jalur-smp:hover, .label-jalur-smp.active{
+            background: #F9A825 !important;
+        }
+        .label-jalur-smp:hover{
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+
+        .label-jalur-smp{
+            border: 0px;
+        }
+
+        .label-jalur-smp{
+            color: #F9A825;
+        }
+
+        .label-jalur-sd:hover, .label-jalur-sd.active{
+            background: #D32F2F;
+        }
+        .label-jalur-sd:hover{
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+
+        .label-jalur-sd{
+            border: 0px;
+        }
+
+        .label-jalur-sd{
+            color: #D32F2F;
+        }
+
+        .panel-heading{
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .navbar{
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .panel-heading .panel-title{display:inline-block}
+        .select2-container--krajee .select2-selection--single, .select2-container--krajee .select2-selection--multiple .select2-search--inline .select2-search__field {height: 40px;padding: 9px 24px 9px 12px;}
+        .select2-container--krajee .select2-selection--single .select2-selection__clear{right: 3rem;top: 1rem;}
+        .select2-container--krajee .select2-selection--single .select2-selection__arrow{height: 39px}
+    </style>
+</head>
+<body class="form-inputs-page">
+        <div id="main">
+        ->
+<header class="navbar navbar-fixed-top navbar-shadow" style="background-color: #FFCA28;">
+    <div class="navbar-branding">
+        <a class="navbar-brand" href="/" style="color: #ffffff">
+            <b>PPDB</b> Karanganyar
+        </a>
+        <span id="toggle_sidemenu_l" class="ad ad-lines" style="color: #ffffff"></span>
+    </div>
+    <form class="navbar-form navbar-left navbar-search alt"
+          action="/umum/pencarian-peserta/cari">
+        <div class="form-group">
+            <input type="text" name="kunci" class="form-control" placeholder="Ketikkan Nama/NIK ..." value="">
+        </div>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+                                </ul>
+</header>
+        <aside id="sidebar_left" class="nano nano-light affix" style="background-color: #37474F;">
+    <div class="sidebar-left-content nano-content">
+        <header class="sidebar-header">
+                        <div class="sidebar-widget search-widget hidden">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <input type="text" id="sidebar-search" class="form-control" placeholder="Search...">
+                </div>
+            </div>
+
+        </header>
+        <ul class="nav sidebar-menu"><li class="active"><a href="/smp/site/index"><span class="fa-home fa"></span>  <span class="sidebar-title">Home</span></a></li>
+<li><a href="/smp/site/juknis"><span class="fa-file-word-o fa"></span>  <span class="sidebar-title">Petunjuk Teknis</span></a></li>
+<li><a href="/smp/daftar-sekolah/index"><span class="fa-building fa"></span>  <span class="sidebar-title">Daftar Sekolah</span></a></li>
+<li><a href="/smp/daftar-zona/index"><span class="fa-building fa"></span>  <span class="sidebar-title">Daftar Zona Wilayah</span></a></li>
+<li><a href="/smp/wilayah/index"><span class="fa fa-map-marker"></span>  <span class="sidebar-title">Daftar Wilayah</span></a></li>
+<li><a href="/smp/site/alur"><span class="fa-arrow-circle-right fa fa-lg"></span>  <span class="sidebar-title">Alur Pendaftaran</span></a></li>
+<li><a href="/faq/index"><span class="fa fa-question-circle-o fa-lg"></span>  <span class="sidebar-title">FAQ</span></a></li>
+<li><a href="/smp/berita/index"><span class="fa-newspaper-o fa fa-lg"></span>  <span class="sidebar-title">Berita</span></a></li>
+<li><a href="/tanya-jawab"><span class="fa-comments-o fa fa-lg"></span>  <span class="sidebar-title">Tanya Jawab / Pengaduan</span></a></li>
+<li><a href="/site/login-siswa"><span class="fa-sign-in fa fa-lg"></span>  <span class="sidebar-title">Login</span></a></li>
+<li><a href="/umum/pendaftaran/step-one"><span class="fa-list fa"></span>  <span class="sidebar-title">Registrasi Akun</span></a></li></ul>        <ul class="nav sidebar-menu">
+            <li class="sidebar-label pt20" style="color: #fff">Informasi</li>
+            <li class="sidebar-stat">
+                <a href="#" class="fs11">
+                    <span class="fa fa-phone text-info"></span>
+                    <span class="sidebar-title">Helpdesk</span>
+                    <span class="pull-right mr20">(0271) 495041</span>
+                </a>
+            </li>
+
+            <li class="sidebar-stat">
+                <a href="#" class="fs11">
+                    <span class="fa fa-clock-o text-warning"></span>
+                    <span class="sidebar-title">Pendaftaran</span>
+                    <span class="pull-right mr20">24 Jam</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</aside>
+        <section id="content_wrapper">
+            <div id="content" class="animated fadeIn">
+                                <div class="body-content">
+<div id="header">
+    <div class="main-header" style="background-color: #fff;
+    background-image: linear-gradient( to right, #fff 20%, #fff 30%, #fff 30%, #fff 20% )">
+        <img class="header-img" src="/img/head1.png">
+    </div>
+    <br />
+    <div class="alert bg-red" style="background-color: #B71C1C" role="alert">
+        <center><b>Selamat datang di Website resmi PPDB Online SD dan SMP KABUPATEN KARANGANYAR Tahun Pelajaran 2024/2025</b></center>    </div>
+    <!-- <div class="caption-marquee" style="display: bl">
+        <marquee>
+            <strong>
+                #Selamat datang di Website resmi PPDB Online SMP KABUPATEN KARANGANYAR Tahun Pelajaran 2024/2025            </strong>
+        </marquee>
+    </div> -->
+</div>
+<div class="panel">
+    <div class="panel-body">
+        <table style="margin : 0 auto;" class="table-responsive">
+            <tr>
+                <td align="center" style="margin : 0 auto">
+                                                                                    <div class="jenjang" style="background:#FFF176;">
+                            <a href="/smp" style="text-decoration: none;">
+                                <div class="panel bg-warning of-h mb10">
+                                    <div class="pn pl20 p5">
+                                        <div class="icon-bg hidden-xs hidden-sm hidden-md"> <i class="fa fa-user-circle-o"></i> </div>
+                                        <h2 class="mt15 lh15 text-white" align="left"> <b>PPDB SMP</b> </h2>
+                                        <h6 class="text-white" align="left">Sekolah Menengah Pertama</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                                </tr>
+            </tr>
+        </table>
+        <form action="data.php" method="post" enctype="application/x-www-form-urlencoded" name="form1">
+            <table width="100%" class="bordertipis" style="margin-top: 10px;">
+                <tr>
+                    <td align="center" style="vertical-align: top;">
+                        <div>
+                                                                <a href="?idjalur=VFZSQlBRPT0=" id="jalur10" data-urlcontroller="https://ppdb.karanganyarkab.go.id/smp/site/index" name="jalur" class="jalur-smp" value="10">
+                                        <label style="display: inline-block;" for="jalur10" class="label-jalur label-jalur-smp active">
+                                            <div class="nama-jalur nama-jalur-smp">
+                                                <i class="fa fa-user"></i><br />
+                                                <b>Jalur Afirmasi - Disabilitas</b>
+                                            </div>
+                                        </label>
+                                                                    <a href="?idjalur=VGtFOVBRPT0=" id="jalur4" data-urlcontroller="https://ppdb.karanganyarkab.go.id/smp/site/index" name="jalur" class="jalur-smp" value="4">
+                                        <label style="display: inline-block;" for="jalur4" class="label-jalur label-jalur-smp ">
+                                            <div class="nama-jalur nama-jalur-smp">
+                                                <i class="fa fa-user"></i><br />
+                                                <b>Jalur Afirmasi - Ekonomi Tidak Mampu</b>
+                                            </div>
+                                        </label>
+                                                                    <a href="?idjalur=VFZFOVBRPT0=" id="jalur1" data-urlcontroller="https://ppdb.karanganyarkab.go.id/smp/site/index" name="jalur" class="jalur-smp" value="1">
+                                        <label style="display: inline-block;" for="jalur1" class="label-jalur label-jalur-smp ">
+                                            <div class="nama-jalur nama-jalur-smp">
+                                                <i class="fa fa-graduation-cap"></i><br />
+                                                <b>Jalur Zonasi</b>
+                                            </div>
+                                        </label>
+                                                                    <a href="?idjalur=VFdjOVBRPT0=" id="jalur2" data-urlcontroller="https://ppdb.karanganyarkab.go.id/smp/site/index" name="jalur" class="jalur-smp" value="2">
+                                        <label style="display: inline-block;" for="jalur2" class="label-jalur label-jalur-smp ">
+                                            <div class="nama-jalur nama-jalur-smp">
+                                                <i class="fa fa-trophy"></i><br />
+                                                <b>Jalur Prestasi</b>
+                                            </div>
+                                        </label>
+                                                                    <a href="?idjalur=VFhjOVBRPT0=" id="jalur3" data-urlcontroller="https://ppdb.karanganyarkab.go.id/smp/site/index" name="jalur" class="jalur-smp" value="3">
+                                        <label style="display: inline-block;" for="jalur3" class="label-jalur label-jalur-smp ">
+                                            <div class="nama-jalur nama-jalur-smp">
+                                                <i class="fa fa-users"></i><br />
+                                                <b>Jalur Perpindahan Tugas Orang Tua</b>
+                                            </div>
+                                        </label>
+                                                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        Selamat datang di Website resmi PPDB Online SD dan SMP KABUPATEN KARANGANYAR Tahun Pelajaran 2024/2025                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="idjalur" hidden="hidden"></div>
+<div id="urlcontroller" hidden="hidden">/site</div>
+
+
+
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            Alur PPDB Online Kabupaten Karanganyar        </div>
+        <div class="panel-body">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner" style="padding-bottom: 30px;">
+                    <div class="item active">
+                        <img src="/img/alur.png" alt="" style="width: 90%; display: block; margin: auto;">                    </div>
+                    <div class="item">
+                        <img src="/img/alur-akun-dalam.png" alt="" style="width: 90%; display: block; margin: auto;">                    </div>
+                    <div class="item">
+                        <img src="/img/alur-akun-luar.png" alt="" style="width: 90%; display: block; margin: auto;">                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-example-generic" style="background-image: none;" data-slide="prev">
+                    <span class="fa fa-angle-left fa-2x pull-left" style="padding-top: 100%;color: blue;"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" style="background-image: none;" data-slide="next">
+                    <span class="fa fa-angle-right fa-2x pull-right" style="padding-top: 100%;color: blue;"></span>
+                </a>
+            </div>
+            <p class="text-center"><b><i>(Klik arah panah kanan/kiri untuk melihat Alur Pembuatan Akun)</i></b></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-warning" style="height: 200px">
+                <div class="panel-heading">
+                    <span class="panel-title"><i class="fa fa-phone fa-1x fa-lg"></i>Helpdesk</span>
+                </div>
+                <div class="panel-body text-center" style="height: 150px">
+                    <i class="fa fa-headphones fa-5x"></i>
+                    <h2><i class="fa fa-phone"></i> (0271) 495041</h2>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-warning" style="height: 200px">
+                <div class="panel-heading">
+                    <span class="panel-title"><i class="fa fa-clock-o fa-1x fa-lg"></i>Waktu Pendaftaran Online</span>
+                </div>
+                <div class="panel-body text-center" style="height: 150px">
+                    <i class="fa fa-television fa-5x"></i>
+                    <h2><i class="fa fa-clock-o"></i> 24 Jam</h2>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-warning" style="height: 200px">
+                <div class="panel-heading">
+                    <span class="panel-title"><i class="fa fa-slideshare fa-1x fa-lg"></i>Supported by</span>
+                </div>
+                <div class="panel-body" style="height: 150px">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <a href="https://karanganyarkab.go.id/">
+                                <img src="/img/logo.png" class="img-responsive pull-right" style="max-height: 125px;">
+                            </a>
+                        </div>
+                        <div class="col-xs-8">
+                            <a href="https://uns.ac.id">
+                                <img src="/img/logo_uns.png"  class="img-responsive pull-right" style="max-height: 125px;">
+                            </a>
+                        </div>
+                    </div>                     
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </section>
+    </div>
+    <script src="https://ppdb.karanganyarkab.go.id/assets/670f7909/jquery.js"></script>
+<script src="https://ppdb.karanganyarkab.go.id/assets/e2c185ed/yii.js"></script>
+<script src="https://ppdb.karanganyarkab.go.id/assets/b4b280f5/jquery-ui.js"></script>
+<script src="https://ppdb.karanganyarkab.go.id/assets/040705e8/js/bootstrap.js"></script>
+<script src="https://ppdb.karanganyarkab.go.id/assets/c844cf48/js/utility.js"></script>
+<script src="https://ppdb.karanganyarkab.go.id/assets/c844cf48/js/main.js"></script>    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            "use strict";
+            Core.init();
+        });
+        jQuery.fn.modal.Constructor.prototype.enforceFocus = function () {
+        };
+        jQuery(document).on('click', '[data-toggle="dropdown"]', function (e) {
+            e.preventDefault();
+            $(this).dropdown('toggle');
+        });
+        jQuery(document).on('click', '[data-toggle="tab"]', function (e) {
+            e.preventDefault();
+            $(this).tab('show')
+        });
+    </script>
+        <script async src="https://analytics.uns.ac.id/script.js" data-website-id="6f7cbe80-0801-4ddc-8e27-303ef79dcb98"></script>
+    </body>
+</html>

@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link type="image/png" href="https://ppdb.karanganyarkab.go.id/img/favicon.png" rel="icon" sizes="96x96">
+<link href="./ppdb smp_files/bootstrap.css" rel="stylesheet">
+<link href="./ppdb smp_files/kv-grid.min.css" rel="stylesheet">
+<link href="./ppdb smp_files/ajaxcrud.css" rel="stylesheet">
+<link href="./ppdb smp_files/bootstrap-dialog-bs3.min.css" rel="stylesheet">
+<link href="./ppdb smp_files/jquery.resizableColumns.min.css" rel="stylesheet">
+<link href="./ppdb smp_files/font-awesome.min.css" rel="stylesheet">
+<link href="./ppdb smp_files/jquery-ui.css" rel="stylesheet">
+<link href="./ppdb smp_files/theme.min.css" rel="stylesheet">
+<link href="./ppdb smp_files/admin-forms.min.css" rel="stylesheet">
+<style>/* devanagari */
+/*@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Hind Light'), local('Hind-Light'), url(/fonts/5aU19_a8oxmIfMJaERKSjQpf.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}*/
+/* latin-ext */
+/*@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Hind Light'), local('Hind-Light'), url(/fonts/5aU19_a8oxmIfMJaERKSjQpf.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}*/
+/* latin */
+/*@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Hind Light'), local('Hind-Light'), url(/fonts/5aU19_a8oxmIfMJaERKSjQpf.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}*/
+/* devanagari */
+/*@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Hind Medium'), local('Hind-Medium'), url(/fonts/5aU19_a8oxmIfMJaERKSjQpf.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}*/
+/* latin-ext */
+/*@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Hind Medium'), local('Hind-Medium'), url(/fonts/5aU19_a8oxmIfJpbERKSjQpf.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}*/
+/* latin */
+/*@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Hind Medium'), local('Hind-Medium'), url(/fonts/5aU19_a8oxmIfJpbERySjQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}*/
+.marque {
+	font-size: 16px;
+	font-style: italic;
+	font-weight: bold;
+}
+.main-header {
+    background-color: #db3f26;
+    text-align: center;
+}
+
+.header-img {
+    width: 100%;
+    max-width: 1058px;    
+}
+.caption-marquee {
+    font-family: 'Hind', sans-serif;
+    font-size: 14px;
+    width: 100%;
+    color: #F9F9F9;
+    background-color: #263238;
+    padding: 10px 20px;
+    border-top: 4px solid #FFF;
+    bottom: 4px;
+}
+
+.jenjang{
+    width: 300px;
+    display: inline-block;
+    padding: 10px 10px 2px 10px;
+}
+
+.label-jalur{
+    padding: 10px;
+    display: inline-block;
+    cursor:pointer;
+    box-shadow: 0 5px 8px #DDD;
+    position: relative;
+    vertical-align: middle;
+    border-radius: 10px;
+    margin: 0 5px 10px 5px;
+}
+
+.nama-jalur{
+    max-width: 250px;
+    word-wrap: break-word;
+}
+.nama-jalur i{
+    font-size: 30px;
+}
+.nama-jalur b{
+    font-size: 12px;
+}
+
+.label-jalur-tk{
+    border:1px solid #8cb82f; 
+    color: #8cb82f;
+}
+.label-jalur-tk:hover, .label-jalur-tk.active {
+    background-color: #8cb82f;
+    color: #ffffff;
+}
+
+.label-jalur-sd{
+    border:1px solid #e36d5a; 
+    color: #e36d5a;
+}
+.label-jalur-sd:hover, .label-jalur-sd.active{
+    background-color: #e36d5a;
+    color: #ffffff;
+}
+
+.label-jalur-smp{
+    border:1px solid #F9A825; 
+    color: #F9A825;
+}
+.label-jalur-smp:hover, .label-jalur-smp.active {
+    background-color: #F9A825;
+    color: #ffffff;
+}
+
+.tombol-tk{
+    background-color: #FFFFFF;
+    border:1px solid #8cb82f;
+    margin: 2px 2px 2px 0;
+    color: #8cb82f;
+    border-radius: 5px;
+}
+.tombol-tk:hover, .tombol-tk:focus, .tombol-tk.active {
+    background-color: #8cb82f;
+    color: #ffffff;
+}
+
+.tombol-sd{
+    background-color: #FFFFFF;
+    border:1px solid #e36d5a;
+    margin: 2px 2px 2px 0;
+    color: #e36d5a;
+    border-radius: 5px;
+}
+.tombol-sd:hover, .tombol-sd:focus, .tombol-sd.active {
+    background-color: #e36d5a;
+    color: #ffffff;
+}
+
+.tombol-smp{
+    background-color: #FFFFFF;
+    border:1px solid #F9A825;
+    margin: 2px 2px 2px 0;
+    color: #F9A825;
+    border-radius: 5px;
+}
+.tombol-smp:hover, .tombol-smp:focus, .tombol-smp.active {
+    background-color: #F9A825;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 1024px) {
+    .caption-marquee {
+        font-size: 13px;
+    }
+    .label-jalur{
+        border-radius: 20px;
+    }
+    .nama-jalur{
+        font-size: 12px;
+    }
+    .nama-jalur i{
+        font-size: 50px;
+    }
+    .tombol{
+        margin: 1.8px 1.8px 1.8px 0;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+    .jenjang{
+        width: 190px;
+        display: inline-block;
+        padding: 5px 5px 0 5px;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .caption-marquee {
+        padding: 12px 18px;
+        font-size: 12px;
+        border-top-width: 3px;
+        bottom: 4px;
+    }
+    .label-jalur{
+        border-radius: 18px;
+    }
+    .nama-jalur b{
+        font-size: 10px;
+    }
+    .nama-jalur i{
+        font-size: 35px;
+    }
+    .tombol{
+        margin: 1.6px 1.6px 1.6px 0;
+        border-radius: 4.8px;
+        font-size: 11px;
+    }
+    .jenjang{
+        width: 160px;
+        display: inline-block;
+        padding: 5px 5px 0 5px;
+    }
+    .jenjang h2{
+        font-size: 18px;
+    }
+    .jenjang h6{
+        font-size: 9px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .caption-marquee {
+        padding: 6px 14px 0;
+        font-size: 10px;
+        border-top-width: 3px;
+        bottom: 2px;
+    }
+    .marque {
+        font-size: 12px;
+    }
+    .label-jalur{
+        border-radius: 12px;
+    }
+    .nama-jalur b{
+        font-size: 6px;
+    }
+    .nama-jalur i{
+        font-size: 20px;
+    }
+    .tombol{
+        margin: 1.4px 1.4px 1.4px 0;
+        border-radius: 4.6px;
+        font-size: 10px;
+    }
+    .jenjang{
+        width: 120px;
+        display: inline-block;
+        padding: 5px 5px 0 5px;
+    }
+    .jenjang h2{
+        font-size: 16px;
+    }
+    .jenjang h6{
+        font-size: 6px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .fluid-xs {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    .caption-marquee {
+        padding: 4px 10px 0;
+        font-size: 8px;
+        border-top-width: 1px;
+        bottom: 0;
+    }
+    .marque {
+        font-size: 8px;
+    }
+    .label-jalur{
+        border-radius: 12px;
+    }
+    .nama-jalur{
+        font-size: 6px;
+    }
+    .nama-jalur i{
+        font-size: 30px;
+    }
+    .tombol{
+        margin: 1.2px 1.2px 1.2px 0;
+        border-radius: 4.4px;
+        font-size: 9px;
+    }
+    .jenjang{
+        width: 80px;
+        display: inline-block;
+        padding: 5px 5px 0 5px;
+    }
+    .jenjang h2{
+        font-size: 12px;
+    }
+    .jenjang h6{
+        font-size: 4px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .marque {
+        font-size: 6px;
+    }
+    .label-jalur{
+        border-radius: 12px;
+    }
+    .nama-jalur{
+        font-size: 7px;
+    }
+    .nama-jalur i{
+        font-size: 25px;
+    }
+    .tombol{
+        margin: 1px 1px 1px 0;
+        border-radius: 4.2px;
+        font-size: 8px;
+    }
+}
+</style>
+<style>body, .panel-heading{color: #000000;}</style>
+<style>
+    .navbar .nav > li.open > a, 
+    .navbar .nav > li:hover > a, 
+    .navbar .nav > li:focus > a, 
+    .navbar .nav > li.active > a, 
+    .navbar .nav > li > a:hover, 
+    .navbar .nav > li > a:focus{
+        background-color: #37474f;
+        color: #ffffff;
+    }</style>
+<style>
+    .sidebar-menu > li > ul {
+        background-color: #1e282d;
+    }</style>
+<script src="./ppdb smp_files/dialog.min.js.unduhan"></script>
+<script>var krajeeDialogDefaults_f77ffd0f = {"alert":{"type":"type-info","title":"Information","buttonLabel":"<span class=\"glyphicon glyphicon-ok\"></span> Ok"},"confirm":{"type":"type-warning","title":"Confirmation","btnOKClass":"btn-warning","btnOKLabel":"<span class=\"glyphicon glyphicon-ok\"></span> Ok","btnCancelLabel":"<span class=\"glyphicon glyphicon-ban-circle\"></span>  Cancel"},"prompt":{"draggable":false,"title":"Information","buttons":[{"label":"Cancel","icon":"glyphicon glyphicon-ban-circle","cssClass":"btn-default"},{"label":"Ok","icon":"glyphicon glyphicon-ok","cssClass":"btn-primary"}],"closable":false},"dialog":{"draggable":true,"title":"Information","buttons":[{"label":"Cancel","icon":"glyphicon glyphicon-ban-circle","cssClass":"btn-default"},{"label":"Ok","icon":"glyphicon glyphicon-ok","cssClass":"btn-primary"}]}};
+var krajeeDialog_63269c26 = {"id":"w0"};
+var krajeeDialog=new KrajeeDialog(true,krajeeDialog_63269c26,krajeeDialogDefaults_f77ffd0f);</script>    
+    <title>PPDB KABUPATEN KARANGANYAR</title>
+    
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
+    <meta name="keywords" content="PPDB KARANGANYAR PPDB KARANGANYAR">
+    <meta name="description" content="Website Resmi PPDB KABUPATEN KARANGANYAR">
+    <meta name="author" content="UPT. Teknologi Informasi dan Komunikasi UNS">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <meta name="csrf-param" content="_csrf-ppdb-salatiga">
+<meta name="csrf-token" content="MpS8KrwzespvjZzJLEsoHemZ-gXWyCaii-bfUaUCnOJK4NBzhAZMpj7d1pp2B11N3_izPef9Y_b4t5s99UrfrA==">
+    <style type="text/css">
+        @font-face {
+            font-family: "Kumbh";
+            src: url('../../fonts/IBMPlexSans-Regular.ttf')  format('truetype');
+        }
+        body {
+            font-family: 'Kumbh', sans-serif;
+        }
+        .sidebar-menu > li.active > a > span:nth-child(1) {
+            color: #000000;
+        }
+        .sidebar-menu>li:hover:not(.active) {
+            transform: scale(1.0); 
+            transition: all 0.3s;
+        }
+        .sidebar-menu>li:hover>a{
+            background: #FFCA28;
+            color: #000;
+            border-radius: 0px;
+        }
+        .sidebar-menu>li.active>a{
+            background: #FFCA28;
+            color: #fff;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .sidebar-menu>li.active>a{
+            color: #000000;
+        }
+        .main-header{
+            border-radius: 10px;
+        }
+        .header-img{
+            border-radius: 10px;
+        }
+
+        .panel, .panel-body{
+            border-radius: 10px;
+        }
+
+        .panel-body {
+            position: relative;
+            padding: 15px;
+            border: 1px solid #e2e2e2;
+            border-top-right-radius: 0 !important;
+            border-top-left-radius: 0 !important;
+        }
+
+        .label-jalur-smp:hover, .label-jalur-smp.active{
+            background: #F9A825 !important;
+        }
+        .label-jalur-smp:hover{
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+
+        .label-jalur-smp{
+            border: 0px;
+        }
+
+        .label-jalur-smp{
+            color: #F9A825;
+        }
+
+        .label-jalur-sd:hover, .label-jalur-sd.active{
+            background: #D32F2F;
+        }
+        .label-jalur-sd:hover{
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+
+        .label-jalur-sd{
+            border: 0px;
+        }
+
+        .label-jalur-sd{
+            color: #D32F2F;
+        }
+
+        .panel-heading{
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .navbar{
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .panel-heading .panel-title{display:inline-block}
+        .select2-container--krajee .select2-selection--single, .select2-container--krajee .select2-selection--multiple .select2-search--inline .select2-search__field {height: 40px;padding: 9px 24px 9px 12px;}
+        .select2-container--krajee .select2-selection--single .select2-selection__clear{right: 3rem;top: 1rem;}
+        .select2-container--krajee .select2-selection--single .select2-selection__arrow{height: 39px}
+    </style>
+</head>
+<body class="form-inputs-page sb-l-o sb-r-c sb-top-mobile onload-check" style="height: 5258.33px;">
+        <div id="main">
+        -&gt;
+<header class="navbar navbar-fixed-top navbar-shadow" style="background-color: #FFCA28;">
+    <div class="navbar-branding">
+        <a class="navbar-brand" href="https://ppdb.karanganyarkab.go.id/" style="color: #ffffff">
+            <b>PPDB</b> Karanganyar
+        </a>
+        <span id="toggle_sidemenu_l" class="ad ad-lines" style="color: #ffffff"></span>
+    </div>
+    <form class="navbar-form navbar-left navbar-search alt" action="https://ppdb.karanganyarkab.go.id/umum/pencarian-peserta/cari">
+        <div class="form-group">
+            <input type="text" name="kunci" class="form-control" placeholder="Ketikkan Nama/NIK ..." value="">
+        </div>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+                                </ul>
+</header>
+        <aside id="sidebar_left" class="nano nano-light affix has-scrollbar" style="background-color: #37474F;">
+    <div class="sidebar-left-content nano-content" tabindex="0" style="margin-right: -15px;">
+        <header class="sidebar-header">
+                        <div class="sidebar-widget search-widget hidden">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <input type="text" id="sidebar-search" class="form-control" placeholder="Search...">
+                </div>
+            </div>
+
+        </header>
+        <ul class="nav sidebar-menu"><li><a href="https://ppdb.karanganyarkab.go.id/smp/site/index"><span class="fa-home fa"></span>  <span class="sidebar-title">Home</span></a></li>
+<li><a href="https://ppdb.karanganyarkab.go.id/smp/site/juknis"><span class="fa-file-word-o fa"></span>  <span class="sidebar-title">Petunjuk Teknis</span></a></li>
+<li class="active"><a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index"><span class="fa-building fa"></span>  <span class="sidebar-title">Daftar Sekolah</span></a></li>
+<li><a href="https://ppdb.karanganyarkab.go.id/smp/daftar-zona/index"><span class="fa-building fa"></span>  <span class="sidebar-title">Daftar Zona Wilayah</span></a></li>
+<li><a href="https://ppdb.karanganyarkab.go.id/smp/wilayah/index"><span class="fa fa-map-marker"></span>  <span class="sidebar-title">Daftar Wilayah</span></a></li>
+<li><a href="https://ppdb.karanganyarkab.go.id/smp/site/alur"><span class="fa-arrow-circle-right fa fa-lg"></span>  <span class="sidebar-title">Alur Pendaftaran</span></a></li>
+<li><a href="https://ppdb.karanganyarkab.go.id/faq/index"><span class="fa fa-question-circle-o fa-lg"></span>  <span class="sidebar-title">FAQ</span></a></li>
+<li><a href="https://ppdb.karanganyarkab.go.id/smp/berita/index"><span class="fa-newspaper-o fa fa-lg"></span>  <span class="sidebar-title">Berita</span></a></li>
+<li><a href="https://ppdb.karanganyarkab.go.id/tanya-jawab"><span class="fa-comments-o fa fa-lg"></span>  <span class="sidebar-title">Tanya Jawab / Pengaduan</span></a></li>
+<li><a href="https://ppdb.karanganyarkab.go.id/site/login-siswa"><span class="fa-sign-in fa fa-lg"></span>  <span class="sidebar-title">Login</span></a></li>
+<li><a href="https://ppdb.karanganyarkab.go.id/umum/pendaftaran/step-one"><span class="fa-list fa"></span>  <span class="sidebar-title">Registrasi Akun</span></a></li></ul>        <ul class="nav sidebar-menu">
+            <li class="sidebar-label pt20" style="color: #fff">Informasi</li>
+            <li class="sidebar-stat">
+                <a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index#" class="fs11">
+                    <span class="fa fa-phone text-info"></span>
+                    <span class="sidebar-title">Helpdesk</span>
+                    <span class="pull-right mr20">(0271) 495041</span>
+                </a>
+            </li>
+
+            <li class="sidebar-stat">
+                <a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index#" class="fs11">
+                    <span class="fa fa-clock-o text-warning"></span>
+                    <span class="sidebar-title">Pendaftaran</span>
+                    <span class="pull-right mr20">24 Jam</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+<div class="nano-pane"><div class="nano-slider" style="height: 526px; transform: translate(0px, 0px);"></div></div></aside>
+        <section id="content_wrapper">
+            <div id="content" class="">
+                                
+
+
+
+<div id="header">
+    <div class="main-header" style="background-color: #fff;
+    background-image: linear-gradient( to right, #fff 20%, #fff 30%, #fff 30%, #fff 20% )">
+        <img class="header-img" src="./ppdb smp_files/head2.png">
+    </div>
+    <br>
+    <div class="alert bg-red" style="background-color: #B71C1C" role="alert">
+        <center><b>Selamat datang di Website resmi PPDB Online SD dan SMP KABUPATEN KARANGANYAR Tahun Pelajaran 2024/2025</b></center>    </div>
+    <!-- <div class="caption-marquee" style="display: bl">
+        <marquee>
+            <strong>
+                #Selamat datang di Website resmi PPDB Online SMP KABUPATEN KARANGANYAR Tahun Pelajaran 2024/2025            </strong>
+        </marquee>
+    </div> -->
+</div>
+<div class="panel">
+    <div class="panel-body">
+        <table style="margin : 0 auto;" class="table-responsive">
+            <tbody><tr>
+                <td align="center" style="margin : 0 auto">
+                                                                                    <div class="jenjang" style="background:#FFF176;">
+                            <a href="https://ppdb.karanganyarkab.go.id/smp" style="text-decoration: none;">
+                                <div class="panel bg-warning of-h mb10">
+                                    <div class="pn pl20 p5">
+                                        <div class="icon-bg hidden-xs hidden-sm hidden-md"> <i class="fa fa-user-circle-o"></i> </div>
+                                        <h2 class="mt15 lh15 text-white" align="left"> <b>PPDB SMP</b> </h2>
+                                        <h6 class="text-white" align="left">Sekolah Menengah Pertama</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                                </td></tr>
+            
+        </tbody></table>
+        <form action="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/data.php" method="post" enctype="application/x-www-form-urlencoded" name="form1">
+            <table width="100%" class="bordertipis" style="margin-top: 10px;">
+                <tbody><tr>
+                    <td align="center" style="vertical-align: top;">
+                        <div>
+                                                                <a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index?idjalur=VFZSQlBRPT0=" id="jalur10" data-urlcontroller="https://ppdb.karanganyarkab.go.id/smp/site/index" name="jalur" class="jalur-smp" value="10">
+                                        <label style="display: inline-block;" for="jalur10" class="label-jalur label-jalur-smp active">
+                                            <div class="nama-jalur nama-jalur-smp">
+                                                <i class="fa fa-user"></i><br>
+                                                <b>Jalur Afirmasi - Disabilitas</b>
+                                            </div>
+                                        </label>
+                                                                    </a><a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index?idjalur=VGtFOVBRPT0=" id="jalur4" data-urlcontroller="https://ppdb.karanganyarkab.go.id/smp/site/index" name="jalur" class="jalur-smp" value="4">
+                                        <label style="display: inline-block;" for="jalur4" class="label-jalur label-jalur-smp ">
+                                            <div class="nama-jalur nama-jalur-smp">
+                                                <i class="fa fa-user"></i><br>
+                                                <b>Jalur Afirmasi - Ekonomi Tidak Mampu</b>
+                                            </div>
+                                        </label>
+                                                                    </a><a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index?idjalur=VFZFOVBRPT0=" id="jalur1" data-urlcontroller="https://ppdb.karanganyarkab.go.id/smp/site/index" name="jalur" class="jalur-smp" value="1">
+                                        <label style="display: inline-block;" for="jalur1" class="label-jalur label-jalur-smp ">
+                                            <div class="nama-jalur nama-jalur-smp">
+                                                <i class="fa fa-graduation-cap"></i><br>
+                                                <b>Jalur Zonasi</b>
+                                            </div>
+                                        </label>
+                                                                    </a><a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index?idjalur=VFdjOVBRPT0=" id="jalur2" data-urlcontroller="https://ppdb.karanganyarkab.go.id/smp/site/index" name="jalur" class="jalur-smp" value="2">
+                                        <label style="display: inline-block;" for="jalur2" class="label-jalur label-jalur-smp ">
+                                            <div class="nama-jalur nama-jalur-smp">
+                                                <i class="fa fa-trophy"></i><br>
+                                                <b>Jalur Prestasi</b>
+                                            </div>
+                                        </label>
+                                                                    </a><a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index?idjalur=VFhjOVBRPT0=" id="jalur3" data-urlcontroller="https://ppdb.karanganyarkab.go.id/smp/site/index" name="jalur" class="jalur-smp" value="3">
+                                        <label style="display: inline-block;" for="jalur3" class="label-jalur label-jalur-smp ">
+                                            <div class="nama-jalur nama-jalur-smp">
+                                                <i class="fa fa-users"></i><br>
+                                                <b>Jalur Perpindahan Tugas Orang Tua</b>
+                                            </div>
+                                        </label>
+                                                        </a></div><a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index?idjalur=VFhjOVBRPT0=" id="jalur3" data-urlcontroller="https://ppdb.karanganyarkab.go.id/smp/site/index" name="jalur" class="jalur-smp" value="3">
+                    </a></td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        Selamat datang di Website resmi PPDB Online SD dan SMP KABUPATEN KARANGANYAR Tahun Pelajaran 2024/2025                    </td>
+                </tr>
+            </tbody></table>
+        </form>
+    </div>
+</div>
+<div id="idjalur" hidden="hidden"></div>
+<div id="urlcontroller" hidden="hidden">/daftar-sekolah</div>
+
+
+<div class="panel">
+
+    <!-- Panel Heading -->
+    <div class="panel-heading"><h3 style="text-align: center">DAFTAR SEKOLAH</h3></div>
+
+    <!-- Panel Body with text -->
+    <div class="panel-body">
+        <p style="text-align: center">Berikut ini merupakan daftar SMP yang mengikuti PPDB Online Kota Karanganyar. Ditampilkan alamat serta
+            identitas dari tiap sekolah. Untuk lebih lanjut silahkan klik Lihat Profil pada masing-masing
+            sekolah.</p><br>
+    </div>
+    <div id="crud-datatable-pjax" data-pjax-container="" data-pjax-push-state="" data-pjax-timeout="1000"><div class="kv-loader-overlay"><div class="kv-loader"></div></div><div id="crud-datatable" class="grid-view is-bs3 kv-grid-bs3 kv-grid-panel hide-resize" data-krajee-grid="kvGridInit_628b7aa7" data-krajee-ps="ps_crud_datatable_container"><div class="panel panel-default">
+<div class="kv-panel-before">    <div class="btn-toolbar kv-grid-toolbar toolbar-container pull-right"></div>
+    
+    <div class="clearfix"></div></div>
+<div class="rc-handle-container" style="width: 993.667px;"><div class="rc-handle" style="left: 30px; height: 97.7292px;"></div><div class="rc-handle" style="left: 162.448px; height: 97.7292px;"></div><div class="rc-handle" style="left: 417.917px; height: 97.7292px;"></div><div class="rc-handle" style="left: 564.375px; height: 97.7292px;"></div><div class="rc-handle" style="left: 705.969px; height: 97.7292px;"></div><div class="rc-handle" style="left: 803.438px; height: 97.7292px;"></div><div class="rc-handle" style="left: 875.271px; height: 97.7292px;"></div></div><div id="crud-datatable-container" class="table-responsive kv-grid-container"><table class="kv-grid-table table table-bordered table-striped table-condensed"><thead class="kv-table-header crud-datatable">
+<tr><th class="kv-align-center kv-align-middle kv-merged-header" style="width: 3.02%;" rowspan="2" data-col-seq="0">#</th><th style="text-align: center; width: 13.33%;" data-col-seq="1"><a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index?sort=kode" data-sort="kode">KODE</a></th><th style="text-align: center; width: 25.71%;" data-col-seq="2"><a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index?sort=nama" data-sort="nama">NAMA SEKOLAH</a></th><th style="text-align: center; width: 14.74%;" data-col-seq="3"><a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index?sort=Daerah" data-sort="Daerah">KELURAHAN</a></th><th style="text-align: center; width: 14.25%;" data-col-seq="4"><a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index?sort=Kecamatan" data-sort="Kecamatan">KECAMATAN</a></th><th style="text-align: center; width: 9.81%;" data-col-seq="5"><a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index?sort=status" data-sort="status">STATUS SEKOLAH</a></th><th style="text-align: center; width: 7.23%;" data-col-seq="6"><a href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/index?sort=ikut_ppdb" data-sort="ikut_ppdb">Ikut PPDB</a></th><th style="text-align: center; width: 11.92%;" data-col-seq="8">Profil</th></tr><tr id="crud-datatable-filters" class="filters skip-export"><td data-col-seq="1"><input type="text" class="form-control" name="TblSekolahSmpSearch[kode]"></td><td data-col-seq="2"><input type="text" class="form-control" name="TblSekolahSmpSearch[nama]"></td><td data-col-seq="3"><select class="form-control" name="TblSekolahSmpSearch[Daerah]">
+<option value=""></option>
+<option value="ALASTUWO">ALASTUWO</option>
+<option value="ANGGRASMANIS">ANGGRASMANIS</option>
+<option value="BAKALAN">BAKALAN</option>
+<option value="BALONG">BALONG</option>
+<option value="BANDARDAWUNG">BANDARDAWUNG</option>
+<option value="BANGSRI">BANGSRI</option>
+<option value="BANJARHARJO">BANJARHARJO</option>
+<option value="BATURAN">BATURAN</option>
+<option value="BEJEN">BEJEN</option>
+<option value="BERJO">BERJO</option>
+<option value="BERUK">BERUK</option>
+<option value="BLORONG">BLORONG</option>
+<option value="BLULUKAN">BLULUKAN</option>
+<option value="BLUMBANG">BLUMBANG</option>
+<option value="BOLON">BOLON</option>
+<option value="BOLONG">BOLONG</option>
+<option value="BOTOK">BOTOK</option>
+<option value="BRUJUL">BRUJUL</option>
+<option value="BULUREJO">BULUREJO</option>
+<option value="BUNTAR">BUNTAR</option>
+<option value="BURAN">BURAN</option>
+<option value="CANGAKAN">CANGAKAN</option>
+<option value="DAGEN">DAGEN</option>
+<option value="DAWUNG">DAWUNG</option>
+<option value="DAYU">DAYU</option>
+<option value="DELINGAN">DELINGAN</option>
+<option value="DOPLANG">DOPLANG</option>
+<option value="DUKUH">DUKUH</option>
+<option value="GAJAHAN">GAJAHAN</option>
+<option value="GANTEN">GANTEN</option>
+<option value="GANTIWARNO">GANTIWARNO</option>
+<option value="GAUM">GAUM</option>
+<option value="GAWANAN">GAWANAN</option>
+<option value="GAYAMDOMPO">GAYAMDOMPO</option>
+<option value="GEBYOG">GEBYOG</option>
+<option value="GEDONG">GEDONG</option>
+<option value="GEDONGAN">GEDONGAN</option>
+<option value="GEMANTAR">GEMANTAR</option>
+<option value="GEMPOLAN">GEMPOLAN</option>
+<option value="GENENGAN">GENENGAN</option>
+<option value="GENTUNGAN">GENTUNGAN</option>
+<option value="GERDU">GERDU</option>
+<option value="GIRILAYU">GIRILAYU</option>
+<option value="GIRIMULYO">GIRIMULYO</option>
+<option value="GIRIWONDO">GIRIWONDO</option>
+<option value="GONDANGMANIS">GONDANGMANIS</option>
+<option value="GONDOSULI">GONDOSULI</option>
+<option value="GUMENG">GUMENG</option>
+<option value="HARJOSARI">HARJOSARI</option>
+<option value="JANTIHARJO">JANTIHARJO</option>
+<option value="JATEN">JATEN</option>
+<option value="JATI">JATI</option>
+<option value="JATIHARJO">JATIHARJO</option>
+<option value="JATIKUWUNG">JATIKUWUNG</option>
+<option value="JATIMULYO">JATIMULYO</option>
+<option value="JATIPURO">JATIPURO</option>
+<option value="JATIPURWO">JATIPURWO</option>
+<option value="JATIREJO">JATIREJO</option>
+<option value="JATIROYO">JATIROYO</option>
+<option value="JATISAWIT">JATISAWIT</option>
+<option value="JATISOBO">JATISOBO</option>
+<option value="JATISUKO">JATISUKO</option>
+<option value="JATIWARNO">JATIWARNO</option>
+<option value="JATIYOSO">JATIYOSO</option>
+<option value="JENAWI">JENAWI</option>
+<option value="JERUKSAWIT">JERUKSAWIT</option>
+<option value="JETIS">JETIS</option>
+<option value="JUMANTORO">JUMANTORO</option>
+<option value="JUMAPOLO">JUMAPOLO</option>
+<option value="JUNGKE">JUNGKE</option>
+<option value="KADIPIRO">KADIPIRO</option>
+<option value="KALIBOTO">KALIBOTO</option>
+<option value="KALIJIRAK">KALIJIRAK</option>
+<option value="KALING">KALING</option>
+<option value="KALISORO">KALISORO</option>
+<option value="KALIWULUH">KALIWULUH</option>
+<option value="KARANG">KARANG</option>
+<option value="KARANGANYAR">KARANGANYAR</option>
+<option value="KARANGBANGUN">KARANGBANGUN</option>
+<option value="KARANGLO">KARANGLO</option>
+<option value="KARANGMOJO">KARANGMOJO</option>
+<option value="KARANGPANDAN">KARANGPANDAN</option>
+<option value="KARANGREJO">KARANGREJO</option>
+<option value="KARANGSARI">KARANGSARI</option>
+<option value="KARANGTURI">KARANGTURI</option>
+<option value="KEBAK">KEBAK</option>
+<option value="KEDAWUNG">KEDAWUNG</option>
+<option value="KEDUNGJERUK">KEDUNGJERUK</option>
+<option value="KEMIRI">KEMIRI</option>
+<option value="KEMUNING">KEMUNING</option>
+<option value="KLODRAN">KLODRAN</option>
+<option value="KORIPAN">KORIPAN</option>
+<option value="KRAGAN">KRAGAN</option>
+<option value="KRENDOWAHONO">KRENDOWAHONO</option>
+<option value="KUTO">KUTO</option>
+<option value="KWADUNGAN">KWADUNGAN</option>
+<option value="KWANGSAN">KWANGSAN</option>
+<option value="LALUNG">LALUNG</option>
+<option value="LEMAHBANG">LEMAHBANG</option>
+<option value="LEMPONG">LEMPONG</option>
+<option value="MACANAN">MACANAN</option>
+<option value="MALANGGATEN">MALANGGATEN</option>
+<option value="MALANGJIWAN">MALANGJIWAN</option>
+<option value="MATESIH">MATESIH</option>
+<option value="MENJING">MENJING</option>
+<option value="MOJOGEDANG">MOJOGEDANG</option>
+<option value="MOJOROTO">MOJOROTO</option>
+<option value="MUNGGUR">MUNGGUR</option>
+<option value="NANGSRI">NANGSRI</option>
+<option value="NGADILUWIH">NGADILUWIH</option>
+<option value="NGADIREJO">NGADIREJO</option>
+<option value="NGARGOYOSO">NGARGOYOSO</option>
+<option value="NGASEM">NGASEM</option>
+<option value="NGEMPLAK">NGEMPLAK</option>
+<option value="NGEPUNGSARI">NGEPUNGSARI</option>
+<option value="NGIJO">NGIJO</option>
+<option value="NGLEBAK">NGLEBAK</option>
+<option value="NGLEGOK">NGLEGOK</option>
+<option value="NGRINGO">NGRINGO</option>
+<option value="NGUNUT">NGUNUT</option>
+<option value="PABLENGAN">PABLENGAN</option>
+<option value="PANDEYAN">PANDEYAN</option>
+<option value="PAPAHAN">PAPAHAN</option>
+<option value="PASEBAN">PASEBAN</option>
+<option value="PAULAN">PAULAN</option>
+<option value="PENDEM">PENDEM</option>
+<option value="PERENG">PERENG</option>
+<option value="PETUNG">PETUNG</option>
+<option value="PLESUNGAN">PLESUNGAN</option>
+<option value="PLOSO">PLOSO</option>
+<option value="PLOSOREJO">PLOSOREJO</option>
+<option value="PLUMBON">PLUMBON</option>
+<option value="POJOK">POJOK</option>
+<option value="POPONGAN">POPONGAN</option>
+<option value="PULOSARI">PULOSARI</option>
+<option value="PUNTUKREJO">PUNTUKREJO</option>
+<option value="REJOSARI">REJOSARI</option>
+<option value="SALAM">SALAM</option>
+<option value="SAMBIREJO">SAMBIREJO</option>
+<option value="SEDAYU">SEDAYU</option>
+<option value="SEGOROGUNUNG">SEGOROGUNUNG</option>
+<option value="SELOKATON">SELOKATON</option>
+<option value="SELOROMO">SELOROMO</option>
+<option value="SEPANJANG">SEPANJANG</option>
+<option value="SEWUREJO">SEWUREJO</option>
+<option value="SIDOMUKTI">SIDOMUKTI</option>
+<option value="SRINGIN">SRINGIN</option>
+<option value="SROYO">SROYO</option>
+<option value="SUKOSARI">SUKOSARI</option>
+<option value="SUMBEREJO">SUMBEREJO</option>
+<option value="SURUH">SURUH</option>
+<option value="SURUHKALANG">SURUHKALANG</option>
+<option value="TAMANSARI">TAMANSARI</option>
+<option value="TAWANGMANGU">TAWANGMANGU</option>
+<option value="TAWANGSARI">TAWANGSARI</option>
+<option value="TEGALGEDE">TEGALGEDE</option>
+<option value="TENGKLIK">TENGKLIK</option>
+<option value="TLOBO">TLOBO</option>
+<option value="TOHKUNING">TOHKUNING</option>
+<option value="TOHUDAN">TOHUDAN</option>
+<option value="TRENGGULI">TRENGGULI</option>
+<option value="TUBAN">TUBAN</option>
+<option value="TUGU">TUGU</option>
+<option value="TUNGGULREJO">TUNGGULREJO</option>
+<option value="WARU">WARU</option>
+<option value="WONOKELING">WONOKELING</option>
+<option value="WONOLOPO">WONOLOPO</option>
+<option value="WONOREJO">WONOREJO</option>
+<option value="WONOSARI">WONOSARI</option>
+<option value="WUKIRSAWIT">WUKIRSAWIT</option>
+</select></td><td data-col-seq="4"><select class="form-control" name="TblSekolahSmpSearch[Kecamatan]">
+<option value=""></option>
+<option value="COLOMADU">COLOMADU</option>
+<option value="GONDANGREJO">GONDANGREJO</option>
+<option value="JATEN">JATEN</option>
+<option value="JATIPURO">JATIPURO</option>
+<option value="JATIYOSO">JATIYOSO</option>
+<option value="JENAWI">JENAWI</option>
+<option value="JUMANTONO">JUMANTONO</option>
+<option value="JUMAPOLO">JUMAPOLO</option>
+<option value="KARANGANYAR">KARANGANYAR</option>
+<option value="KARANGPANDAN">KARANGPANDAN</option>
+<option value="KEBAKKRAMAT">KEBAKKRAMAT</option>
+<option value="KERJO">KERJO</option>
+<option value="MATESIH">MATESIH</option>
+<option value="MOJOGEDANG">MOJOGEDANG</option>
+<option value="NGARGOYOSO">NGARGOYOSO</option>
+<option value="TASIKMADU">TASIKMADU</option>
+<option value="TAWANGMANGU">TAWANGMANGU</option>
+</select></td><td data-col-seq="5"><select class="form-control" name="TblSekolahSmpSearch[status]">
+<option value=""></option>
+<option value="1">Negeri</option>
+<option value="0">Swasta</option>
+</select></td><td data-col-seq="6"><select class="form-control" name="TblSekolahSmpSearch[ikut_ppdb]">
+<option value=""></option>
+<option value="1">Iya</option>
+<option value="0">Tidak</option>
+</select></td><td data-col-seq="8">&nbsp;</td></tr>
+</thead>
+<tbody>
+<tr class="crud-datatable" data-key="1"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">1</td><td class="crud-datatable" data-col-seq="1">01001</td><td class="crud-datatable" data-col-seq="2">SMP N 1 COLOMADU</td><td class="crud-datatable" data-col-seq="3">GAWANAN</td><td class="crud-datatable" data-col-seq="4">COLOMADU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFZFOVBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="2"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">2</td><td class="crud-datatable" data-col-seq="1">01002</td><td class="crud-datatable" data-col-seq="2">SMP N 2 COLOMADU</td><td class="crud-datatable" data-col-seq="3">MALANGJIWAN</td><td class="crud-datatable" data-col-seq="4">COLOMADU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFdjOVBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="3"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">3</td><td class="crud-datatable" data-col-seq="1">01003</td><td class="crud-datatable" data-col-seq="2">SMP N 3 COLOMADU</td><td class="crud-datatable" data-col-seq="3">MALANGJIWAN</td><td class="crud-datatable" data-col-seq="4">COLOMADU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFhjOVBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="4"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">4</td><td class="crud-datatable" data-col-seq="1">01004</td><td class="crud-datatable" data-col-seq="2">SMP N 1 GONDANGREJO</td><td class="crud-datatable" data-col-seq="3">TUBAN</td><td class="crud-datatable" data-col-seq="4">GONDANGREJO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGtFOVBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="5"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">5</td><td class="crud-datatable" data-col-seq="1">01005</td><td class="crud-datatable" data-col-seq="2">SMP N 2 GONDANGREJO</td><td class="crud-datatable" data-col-seq="3">JATIKUWUNG</td><td class="crud-datatable" data-col-seq="4">GONDANGREJO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGxFOVBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="6"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">6</td><td class="crud-datatable" data-col-seq="1">01006</td><td class="crud-datatable" data-col-seq="2">SMP N 3 GONDANGREJO</td><td class="crud-datatable" data-col-seq="3">WONOSARI</td><td class="crud-datatable" data-col-seq="4">GONDANGREJO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG1jOVBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="7"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">7</td><td class="crud-datatable" data-col-seq="1">01007</td><td class="crud-datatable" data-col-seq="2">SMP N 1 JATEN</td><td class="crud-datatable" data-col-seq="3">JATEN</td><td class="crud-datatable" data-col-seq="4">JATEN</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG5jOVBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="8"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">8</td><td class="crud-datatable" data-col-seq="1">01008</td><td class="crud-datatable" data-col-seq="2">SMP N 2 JATEN</td><td class="crud-datatable" data-col-seq="3">SROYO</td><td class="crud-datatable" data-col-seq="4">JATEN</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VDBFOVBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="9"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">9</td><td class="crud-datatable" data-col-seq="1">01009</td><td class="crud-datatable" data-col-seq="2">SMP N 1 JATIPURO</td><td class="crud-datatable" data-col-seq="3">JATIPURO</td><td class="crud-datatable" data-col-seq="4">JATIPURO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VDFFOVBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="10"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">10</td><td class="crud-datatable" data-col-seq="1">01010</td><td class="crud-datatable" data-col-seq="2">SMP N 2 JATIPURO</td><td class="crud-datatable" data-col-seq="3">JATISUKO</td><td class="crud-datatable" data-col-seq="4">JATIPURO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFZSQlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="11"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">11</td><td class="crud-datatable" data-col-seq="1">01011</td><td class="crud-datatable" data-col-seq="2">SMP N 3 JATIPURO</td><td class="crud-datatable" data-col-seq="3">JATIPURO</td><td class="crud-datatable" data-col-seq="4">JATIPURO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFZSRlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="12"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">12</td><td class="crud-datatable" data-col-seq="1">01012</td><td class="crud-datatable" data-col-seq="2">SMP N 1 JATIYOSO</td><td class="crud-datatable" data-col-seq="3">JATISAWIT</td><td class="crud-datatable" data-col-seq="4">JATIYOSO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFZSSlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="13"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">13</td><td class="crud-datatable" data-col-seq="1">01013</td><td class="crud-datatable" data-col-seq="2">SMP N 2 JATIYOSO</td><td class="crud-datatable" data-col-seq="3">KARANGSARI</td><td class="crud-datatable" data-col-seq="4">JATIYOSO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFZSTlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="14"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">14</td><td class="crud-datatable" data-col-seq="1">01014</td><td class="crud-datatable" data-col-seq="2">SMP N 3 JATIYOSO</td><td class="crud-datatable" data-col-seq="3">WONOKELING</td><td class="crud-datatable" data-col-seq="4">JATIYOSO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFZSUlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="15"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">15</td><td class="crud-datatable" data-col-seq="1">01015</td><td class="crud-datatable" data-col-seq="2">SMP N 4 JATIYOSO</td><td class="crud-datatable" data-col-seq="3">BERUK</td><td class="crud-datatable" data-col-seq="4">JATIYOSO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFZSVlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="16"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">16</td><td class="crud-datatable" data-col-seq="1">01016</td><td class="crud-datatable" data-col-seq="2">SMP N 1 JENAWI</td><td class="crud-datatable" data-col-seq="3">BALONG</td><td class="crud-datatable" data-col-seq="4">JENAWI</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFZSWlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="17"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">17</td><td class="crud-datatable" data-col-seq="1">01017</td><td class="crud-datatable" data-col-seq="2">SMP N 2 JENAWI</td><td class="crud-datatable" data-col-seq="3">SELOROMO</td><td class="crud-datatable" data-col-seq="4">JENAWI</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFZSalBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="18"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">18</td><td class="crud-datatable" data-col-seq="1">01018</td><td class="crud-datatable" data-col-seq="2">SMP N 3 SATU ATAP JENAWI</td><td class="crud-datatable" data-col-seq="3">SIDOMUKTI</td><td class="crud-datatable" data-col-seq="4">JENAWI</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFZSblBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="19"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">19</td><td class="crud-datatable" data-col-seq="1">01019</td><td class="crud-datatable" data-col-seq="2">SMP N 1 JUMANTONO</td><td class="crud-datatable" data-col-seq="3">NGUNUT</td><td class="crud-datatable" data-col-seq="4">JUMANTONO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFZSclBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="20"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">20</td><td class="crud-datatable" data-col-seq="1">01020</td><td class="crud-datatable" data-col-seq="2">SMP N 2 JUMANTONO</td><td class="crud-datatable" data-col-seq="3">TUGU</td><td class="crud-datatable" data-col-seq="4">JUMANTONO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFdwQlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="21"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">21</td><td class="crud-datatable" data-col-seq="1">01021</td><td class="crud-datatable" data-col-seq="2">SMP N 3 JUMANTONO</td><td class="crud-datatable" data-col-seq="3">GEMANTAR</td><td class="crud-datatable" data-col-seq="4">JUMANTONO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFdwRlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="22"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">22</td><td class="crud-datatable" data-col-seq="1">01022</td><td class="crud-datatable" data-col-seq="2">SMP N 1 JUMAPOLO</td><td class="crud-datatable" data-col-seq="3">JUMAPOLO</td><td class="crud-datatable" data-col-seq="4">JUMAPOLO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFdwSlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="23"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">23</td><td class="crud-datatable" data-col-seq="1">01023</td><td class="crud-datatable" data-col-seq="2">SMP N 2 JUMAPOLO</td><td class="crud-datatable" data-col-seq="3">JUMAPOLO</td><td class="crud-datatable" data-col-seq="4">JUMAPOLO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFdwTlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="24"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">24</td><td class="crud-datatable" data-col-seq="1">01024</td><td class="crud-datatable" data-col-seq="2">SMP N 3 JUMAPOLO</td><td class="crud-datatable" data-col-seq="3">JATIREJO</td><td class="crud-datatable" data-col-seq="4">JUMAPOLO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFdwUlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="25"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">25</td><td class="crud-datatable" data-col-seq="1">01025</td><td class="crud-datatable" data-col-seq="2">SMP N 1 KARANGANYAR</td><td class="crud-datatable" data-col-seq="3">BEJEN</td><td class="crud-datatable" data-col-seq="4">KARANGANYAR</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFdwVlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="26"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">26</td><td class="crud-datatable" data-col-seq="1">01026</td><td class="crud-datatable" data-col-seq="2">SMP N 2 KARANGANYAR</td><td class="crud-datatable" data-col-seq="3">TEGALGEDE</td><td class="crud-datatable" data-col-seq="4">KARANGANYAR</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFdwWlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="27"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">27</td><td class="crud-datatable" data-col-seq="1">01027</td><td class="crud-datatable" data-col-seq="2">SMP N 3 KARANGANYAR</td><td class="crud-datatable" data-col-seq="3">POPONGAN</td><td class="crud-datatable" data-col-seq="4">KARANGANYAR</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFdwalBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="28"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">28</td><td class="crud-datatable" data-col-seq="1">01028</td><td class="crud-datatable" data-col-seq="2">SMP N 4 KARANGANYAR</td><td class="crud-datatable" data-col-seq="3">BEJEN</td><td class="crud-datatable" data-col-seq="4">KARANGANYAR</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFdwblBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="29"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">29</td><td class="crud-datatable" data-col-seq="1">01029</td><td class="crud-datatable" data-col-seq="2">SMP N 5 KARANGANYAR</td><td class="crud-datatable" data-col-seq="3">CANGAKAN</td><td class="crud-datatable" data-col-seq="4">KARANGANYAR</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFdwclBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="30"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">30</td><td class="crud-datatable" data-col-seq="1">01030</td><td class="crud-datatable" data-col-seq="2">SMP N 1 KARANGPANDAN</td><td class="crud-datatable" data-col-seq="3">DOPLANG</td><td class="crud-datatable" data-col-seq="4">KARANGPANDAN</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFhwQlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="31"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">31</td><td class="crud-datatable" data-col-seq="1">01031</td><td class="crud-datatable" data-col-seq="2">SMP N 2 KARANGPANDAN</td><td class="crud-datatable" data-col-seq="3">BANGSRI</td><td class="crud-datatable" data-col-seq="4">KARANGPANDAN</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFhwRlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="32"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">32</td><td class="crud-datatable" data-col-seq="1">01032</td><td class="crud-datatable" data-col-seq="2">SMP N 3 KARANGPANDAN</td><td class="crud-datatable" data-col-seq="3">SALAM</td><td class="crud-datatable" data-col-seq="4">KARANGPANDAN</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFhwSlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="33"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">33</td><td class="crud-datatable" data-col-seq="1">01033</td><td class="crud-datatable" data-col-seq="2">SMP N 1 KEBAKKRAMAT</td><td class="crud-datatable" data-col-seq="3">KEMIRI</td><td class="crud-datatable" data-col-seq="4">KEBAKKRAMAT</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFhwTlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="34"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">34</td><td class="crud-datatable" data-col-seq="1">01034</td><td class="crud-datatable" data-col-seq="2">SMP N 2 KEBAKKRAMAT</td><td class="crud-datatable" data-col-seq="3">PULOSARI</td><td class="crud-datatable" data-col-seq="4">KEBAKKRAMAT</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFhwUlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="35"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">35</td><td class="crud-datatable" data-col-seq="1">01035</td><td class="crud-datatable" data-col-seq="2">SMP N 3 KEBAKKRAMAT</td><td class="crud-datatable" data-col-seq="3">ALASTUWO</td><td class="crud-datatable" data-col-seq="4">KEBAKKRAMAT</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFhwVlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="36"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">36</td><td class="crud-datatable" data-col-seq="1">01036</td><td class="crud-datatable" data-col-seq="2">SMP N 1 KERJO</td><td class="crud-datatable" data-col-seq="3">KARANGREJO</td><td class="crud-datatable" data-col-seq="4">KERJO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFhwWlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="37"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">37</td><td class="crud-datatable" data-col-seq="1">01037</td><td class="crud-datatable" data-col-seq="2">SMP N 2 KERJO</td><td class="crud-datatable" data-col-seq="3">SUMBEREJO</td><td class="crud-datatable" data-col-seq="4">KERJO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFhwalBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="38"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">38</td><td class="crud-datatable" data-col-seq="1">01038</td><td class="crud-datatable" data-col-seq="2">SMP N 3 SATU ATAP KERJO</td><td class="crud-datatable" data-col-seq="3">GEMPOLAN</td><td class="crud-datatable" data-col-seq="4">KERJO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFhwblBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="39"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">39</td><td class="crud-datatable" data-col-seq="1">01039</td><td class="crud-datatable" data-col-seq="2">SMP N 1 MATESIH</td><td class="crud-datatable" data-col-seq="3">MATESIH</td><td class="crud-datatable" data-col-seq="4">MATESIH</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VFhwclBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="40"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">40</td><td class="crud-datatable" data-col-seq="1">01040</td><td class="crud-datatable" data-col-seq="2">SMP N 2 MATESIH</td><td class="crud-datatable" data-col-seq="3">GANTIWARNO</td><td class="crud-datatable" data-col-seq="4">MATESIH</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGtSQlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="41"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">41</td><td class="crud-datatable" data-col-seq="1">01041</td><td class="crud-datatable" data-col-seq="2">SMP N 1 MOJOGEDANG</td><td class="crud-datatable" data-col-seq="3">MUNGGUR</td><td class="crud-datatable" data-col-seq="4">MOJOGEDANG</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGtSRlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="42"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">42</td><td class="crud-datatable" data-col-seq="1">01042</td><td class="crud-datatable" data-col-seq="2">SMP N 2 MOJOGEDANG</td><td class="crud-datatable" data-col-seq="3">MOJOGEDANG</td><td class="crud-datatable" data-col-seq="4">MOJOGEDANG</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGtSSlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="43"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">43</td><td class="crud-datatable" data-col-seq="1">01043</td><td class="crud-datatable" data-col-seq="2">SMP N 3 MOJOGEDANG</td><td class="crud-datatable" data-col-seq="3">KEDUNGJERUK</td><td class="crud-datatable" data-col-seq="4">MOJOGEDANG</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGtSTlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="44"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">44</td><td class="crud-datatable" data-col-seq="1">01044</td><td class="crud-datatable" data-col-seq="2">SMP N 1 NGARGOYOSO</td><td class="crud-datatable" data-col-seq="3">KEMUNING</td><td class="crud-datatable" data-col-seq="4">NGARGOYOSO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGtSUlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="45"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">45</td><td class="crud-datatable" data-col-seq="1">01045</td><td class="crud-datatable" data-col-seq="2">SMP N 2 NGARGOYOSO</td><td class="crud-datatable" data-col-seq="3">DUKUH</td><td class="crud-datatable" data-col-seq="4">NGARGOYOSO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGtSVlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="46"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">46</td><td class="crud-datatable" data-col-seq="1">01046</td><td class="crud-datatable" data-col-seq="2">SMP N 3 NGARGOYOSO</td><td class="crud-datatable" data-col-seq="3">NGARGOYOSO</td><td class="crud-datatable" data-col-seq="4">NGARGOYOSO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGtSWlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="47"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">47</td><td class="crud-datatable" data-col-seq="1">01047</td><td class="crud-datatable" data-col-seq="2">SMP N 1 TASIKMADU</td><td class="crud-datatable" data-col-seq="3">BURAN</td><td class="crud-datatable" data-col-seq="4">TASIKMADU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGtSalBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="48"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">48</td><td class="crud-datatable" data-col-seq="1">01048</td><td class="crud-datatable" data-col-seq="2">SMP N 2 TASIKMADU</td><td class="crud-datatable" data-col-seq="3">KALIJIRAK</td><td class="crud-datatable" data-col-seq="4">TASIKMADU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGtSblBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="49"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">49</td><td class="crud-datatable" data-col-seq="1">01049</td><td class="crud-datatable" data-col-seq="2">SMP N 3 TASIKMADU</td><td class="crud-datatable" data-col-seq="3">KALING</td><td class="crud-datatable" data-col-seq="4">TASIKMADU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGtSclBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="50"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">50</td><td class="crud-datatable" data-col-seq="1">01050</td><td class="crud-datatable" data-col-seq="2">SMP N 1 TAWANGMANGU</td><td class="crud-datatable" data-col-seq="3">TAWANGMANGU</td><td class="crud-datatable" data-col-seq="4">TAWANGMANGU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGxSQlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="51"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">51</td><td class="crud-datatable" data-col-seq="1">01051</td><td class="crud-datatable" data-col-seq="2">SMP N 2 TAWANGMANGU</td><td class="crud-datatable" data-col-seq="3">BANDARDAWUNG</td><td class="crud-datatable" data-col-seq="4">TAWANGMANGU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-success">Negeri</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGxSRlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="52"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">52</td><td class="crud-datatable" data-col-seq="1">01052</td><td class="crud-datatable" data-col-seq="2">SMP ANGKASA</td><td class="crud-datatable" data-col-seq="3">MALANGJIWAN</td><td class="crud-datatable" data-col-seq="4">COLOMADU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGxSSlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="53"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">53</td><td class="crud-datatable" data-col-seq="1">01053</td><td class="crud-datatable" data-col-seq="2">SMP DAARUL QUR AN</td><td class="crud-datatable" data-col-seq="3">PAULAN</td><td class="crud-datatable" data-col-seq="4">COLOMADU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGxSTlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="54"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">54</td><td class="crud-datatable" data-col-seq="1">01054</td><td class="crud-datatable" data-col-seq="2">SMP MUHAMMADIYAH 7 COLOMADU</td><td class="crud-datatable" data-col-seq="3">BOLON</td><td class="crud-datatable" data-col-seq="4">COLOMADU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGxSUlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="55"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">55</td><td class="crud-datatable" data-col-seq="1">01055</td><td class="crud-datatable" data-col-seq="2">SMP AL ISLAM</td><td class="crud-datatable" data-col-seq="3">KRAGAN</td><td class="crud-datatable" data-col-seq="4">GONDANGREJO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGxSVlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="56"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">56</td><td class="crud-datatable" data-col-seq="1">01056</td><td class="crud-datatable" data-col-seq="2">SMP IT TAHFIDZUL QURAN ULIL ALBAB KARANGANYAR</td><td class="crud-datatable" data-col-seq="3">SELOKATON</td><td class="crud-datatable" data-col-seq="4">GONDANGREJO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGxSWlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="57"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">57</td><td class="crud-datatable" data-col-seq="1">01057</td><td class="crud-datatable" data-col-seq="2">SMP MUHAMMADIYAH 1 GONDANGREJO</td><td class="crud-datatable" data-col-seq="3">TUBAN</td><td class="crud-datatable" data-col-seq="4">GONDANGREJO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGxSalBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="58"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">58</td><td class="crud-datatable" data-col-seq="1">01058</td><td class="crud-datatable" data-col-seq="2">SMP PGRI 13 GONDANGREJO</td><td class="crud-datatable" data-col-seq="3">PLESUNGAN</td><td class="crud-datatable" data-col-seq="4">GONDANGREJO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGxSblBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="59"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">59</td><td class="crud-datatable" data-col-seq="1">01059</td><td class="crud-datatable" data-col-seq="2">SMP MUHAMMADIYAH 9 JATEN</td><td class="crud-datatable" data-col-seq="3">NGRINGO</td><td class="crud-datatable" data-col-seq="4">JATEN</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VGxSclBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="60"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">60</td><td class="crud-datatable" data-col-seq="1">01060</td><td class="crud-datatable" data-col-seq="2">SMP MUHAMMADIYAH 6 JENAWI</td><td class="crud-datatable" data-col-seq="3">ANGGRASMANIS</td><td class="crud-datatable" data-col-seq="4">JENAWI</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG1wQlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="61"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">61</td><td class="crud-datatable" data-col-seq="1">01061</td><td class="crud-datatable" data-col-seq="2">SMP KEBANGSAAN BHARATA </td><td class="crud-datatable" data-col-seq="3">KEDAWUNG</td><td class="crud-datatable" data-col-seq="4">JUMAPOLO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG1wRlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="62"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">62</td><td class="crud-datatable" data-col-seq="1">01062</td><td class="crud-datatable" data-col-seq="2">SMP IT INSAN KAMIL</td><td class="crud-datatable" data-col-seq="3">CANGAKAN</td><td class="crud-datatable" data-col-seq="4">KARANGANYAR</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG1wSlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="63"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">63</td><td class="crud-datatable" data-col-seq="1">01063</td><td class="crud-datatable" data-col-seq="2">SMP IT MTA KARANGANYAR</td><td class="crud-datatable" data-col-seq="3">POPONGAN</td><td class="crud-datatable" data-col-seq="4">KARANGANYAR</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG1wTlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="64"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">64</td><td class="crud-datatable" data-col-seq="1">01064</td><td class="crud-datatable" data-col-seq="2">SMP MUHAMMADIYAH 2 KARANGANYAR</td><td class="crud-datatable" data-col-seq="3">BEJEN</td><td class="crud-datatable" data-col-seq="4">KARANGANYAR</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG1wUlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="65"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">65</td><td class="crud-datatable" data-col-seq="1">01065</td><td class="crud-datatable" data-col-seq="2">SMP MUHAMMADIYAH DARUL ARQOM</td><td class="crud-datatable" data-col-seq="3">TEGALGEDE</td><td class="crud-datatable" data-col-seq="4">KARANGANYAR</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG1wVlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="66"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">66</td><td class="crud-datatable" data-col-seq="1">01066</td><td class="crud-datatable" data-col-seq="2">SMP BHAYANGKARI</td><td class="crud-datatable" data-col-seq="3">KARANGPANDAN</td><td class="crud-datatable" data-col-seq="4">KARANGPANDAN</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG1wWlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="67"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">67</td><td class="crud-datatable" data-col-seq="1">01067</td><td class="crud-datatable" data-col-seq="2">SMP ISLAM AL AZHAR 51 KARANGPANDAN</td><td class="crud-datatable" data-col-seq="3">SALAM</td><td class="crud-datatable" data-col-seq="4">KARANGPANDAN</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG1walBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="68"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">68</td><td class="crud-datatable" data-col-seq="1">01068</td><td class="crud-datatable" data-col-seq="2">SMP MUHAMMADIYAH 3 KARANGPANDAN</td><td class="crud-datatable" data-col-seq="3">DOPLANG</td><td class="crud-datatable" data-col-seq="4">KARANGPANDAN</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG1wblBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="69"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">69</td><td class="crud-datatable" data-col-seq="1">01069</td><td class="crud-datatable" data-col-seq="2">SMP MUHAMMADIYAH 8 KEBAKKRAMAT</td><td class="crud-datatable" data-col-seq="3">KEBAK</td><td class="crud-datatable" data-col-seq="4">KEBAKKRAMAT</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG1wclBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="70"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">70</td><td class="crud-datatable" data-col-seq="1">01070</td><td class="crud-datatable" data-col-seq="2">SMP PGRI 12 KEBAKKRAMAT</td><td class="crud-datatable" data-col-seq="3">KEMIRI</td><td class="crud-datatable" data-col-seq="4">KEBAKKRAMAT</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG5wQlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="71"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">71</td><td class="crud-datatable" data-col-seq="1">01071</td><td class="crud-datatable" data-col-seq="2">SMP MUHAMMADIYAH 5 KERJO</td><td class="crud-datatable" data-col-seq="3">SUMBEREJO</td><td class="crud-datatable" data-col-seq="4">KERJO</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG5wRlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="72"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">72</td><td class="crud-datatable" data-col-seq="1">01072</td><td class="crud-datatable" data-col-seq="2">SMP AL AMAANAH MATESIH</td><td class="crud-datatable" data-col-seq="3">KORIPAN</td><td class="crud-datatable" data-col-seq="4">MATESIH</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG5wSlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="73"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">73</td><td class="crud-datatable" data-col-seq="1">01073</td><td class="crud-datatable" data-col-seq="2">SMP MUHAMMADIYAH 10 MATESIH</td><td class="crud-datatable" data-col-seq="3">NGADILUWIH</td><td class="crud-datatable" data-col-seq="4">MATESIH</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG5wTlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="74"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">74</td><td class="crud-datatable" data-col-seq="1">01074</td><td class="crud-datatable" data-col-seq="2">SMP PGRI 4 MATESIH</td><td class="crud-datatable" data-col-seq="3">MATESIH</td><td class="crud-datatable" data-col-seq="4">MATESIH</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG5wUlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="75"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">75</td><td class="crud-datatable" data-col-seq="1">01075</td><td class="crud-datatable" data-col-seq="2">SMP BHAKTI KARYA MOJOGEDANG</td><td class="crud-datatable" data-col-seq="3">KALIBOTO</td><td class="crud-datatable" data-col-seq="4">MOJOGEDANG</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG5wVlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="76"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">76</td><td class="crud-datatable" data-col-seq="1">01076</td><td class="crud-datatable" data-col-seq="2">SMP ISLAM DARUSSALAM MOJOGEDANG</td><td class="crud-datatable" data-col-seq="3">POJOK</td><td class="crud-datatable" data-col-seq="4">MOJOGEDANG</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG5wWlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="77"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">77</td><td class="crud-datatable" data-col-seq="1">01077</td><td class="crud-datatable" data-col-seq="2">SMP IT ABU JAFAR</td><td class="crud-datatable" data-col-seq="3">MUNGGUR</td><td class="crud-datatable" data-col-seq="4">MOJOGEDANG</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG5walBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="78"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">78</td><td class="crud-datatable" data-col-seq="1">01078</td><td class="crud-datatable" data-col-seq="2">SMP IT LENTERA QURANI</td><td class="crud-datatable" data-col-seq="3">PERENG</td><td class="crud-datatable" data-col-seq="4">MOJOGEDANG</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG5wblBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="79"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">79</td><td class="crud-datatable" data-col-seq="1">01079</td><td class="crud-datatable" data-col-seq="2">SMP MUHAMMADIYAH 4 MOJOGEDANG</td><td class="crud-datatable" data-col-seq="3">MUNGGUR</td><td class="crud-datatable" data-col-seq="4">MOJOGEDANG</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VG5wclBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="80"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">80</td><td class="crud-datatable" data-col-seq="1">01080</td><td class="crud-datatable" data-col-seq="2">SMP PENDA MOJOGEDANG</td><td class="crud-datatable" data-col-seq="3">MOJOGEDANG</td><td class="crud-datatable" data-col-seq="4">MOJOGEDANG</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VDBSQlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="81"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">81</td><td class="crud-datatable" data-col-seq="1">01081</td><td class="crud-datatable" data-col-seq="2">SMP AL AMAANAH TASIKMADU</td><td class="crud-datatable" data-col-seq="3">PANDEYAN</td><td class="crud-datatable" data-col-seq="4">TASIKMADU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VDBSRlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="82"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">82</td><td class="crud-datatable" data-col-seq="1">01082</td><td class="crud-datatable" data-col-seq="2">SMP AL IRSYAD TAWANGMANGU</td><td class="crud-datatable" data-col-seq="3">KALISORO</td><td class="crud-datatable" data-col-seq="4">TAWANGMANGU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VDBSSlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="83"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">83</td><td class="crud-datatable" data-col-seq="1">01083</td><td class="crud-datatable" data-col-seq="2">SMP AMAL MULYA TAWANGMANGU</td><td class="crud-datatable" data-col-seq="3">TAWANGMANGU</td><td class="crud-datatable" data-col-seq="4">TAWANGMANGU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VDBSTlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="84"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">84</td><td class="crud-datatable" data-col-seq="1">01084</td><td class="crud-datatable" data-col-seq="2">SMP PENDA TAWANGMANGU</td><td class="crud-datatable" data-col-seq="3">NGLEBAK</td><td class="crud-datatable" data-col-seq="4">TAWANGMANGU</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VDBSUlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+<tr class="crud-datatable" data-key="85"><td class="kv-align-center kv-align-middle crud-datatable" style="width:30px;" data-col-seq="0">85</td><td class="crud-datatable" data-col-seq="1">01085</td><td class="crud-datatable" data-col-seq="2">SMP AL ABIDIN KARANGANYAR</td><td class="crud-datatable" data-col-seq="3">LALUNG</td><td class="crud-datatable" data-col-seq="4">KARANGANYAR</td><td class="crud-datatable" data-col-seq="5"><div class="label label-primary">Swasta</div></td><td class="crud-datatable" data-col-seq="6"><div class="label label-success">Iya</div></td><td class="crud-datatable" data-col-seq="8"><a class="btn btn-info btn-primary" href="https://ppdb.karanganyarkab.go.id/smp/daftar-sekolah/profil?id=VDBSVlBRPT0=&amp;idjalur="><span class="glyphicon glyphicon-ok"></span>&nbsp; Lihat Profil</a></td></tr>
+</tbody></table></div>
+<div class="kv-panel-after"></div>
+<div class="panel-footer">    <div class="kv-panel-pager">
+        
+    </div>
+    
+    <div class="clearfix"></div></div></div></div></div>
+    <!-- Panel Body with Table (no padding) -->
+
+</div>
+            </div>
+        </section>
+    </div>
+    <script src="./ppdb smp_files/jquery.js.unduhan"></script>
+<script src="./ppdb smp_files/yii.js.unduhan"></script>
+<script src="./ppdb smp_files/bootstrap.js.unduhan"></script>
+<script src="./ppdb smp_files/yii.gridView.js.unduhan"></script>
+<script src="./ppdb smp_files/ModalRemote.min.js.unduhan"></script>
+<script src="./ppdb smp_files/ajaxcrud.min.js.unduhan"></script>
+<script src="./ppdb smp_files/bootstrap-dialog.min.js.unduhan"></script>
+<script src="./ppdb smp_files/dialog-yii.min.js.unduhan"></script>
+<script src="./ppdb smp_files/kv-grid-export.min.js.unduhan"></script>
+<script src="./ppdb smp_files/jquery.resizableColumns.min.js.unduhan"></script>
+<script src="./ppdb smp_files/jquery.pjax.js.unduhan"></script>
+<script src="./ppdb smp_files/jquery-ui.js.unduhan"></script>
+<script src="./ppdb smp_files/utility.js.unduhan"></script>
+<script src="./ppdb smp_files/main.js.unduhan"></script>
+<script>jQuery(function ($) {
+krajeeYiiConfirm('krajeeDialog');
+var kvGridExp_507a263c={"gridId":"crud-datatable","action":"/gridview/export/download","module":"gridview","encoding":"utf-8","bom":1,"target":"_blank","messages":{"allowPopups":"Nonaktifkan semua popup blocker di browser anda untuk memastikan unduhan yang benar.","confirmDownload":"Ok untuk memproses","downloadProgress":"Menghasilkan file ekspor. Silakan tunggu ...","downloadComplete":"Permintaan disampaikan! Anda mungkin sudah bisa menutup dialog ini setelah menyimpan berkas yang anda unduh."},"exportConversions":[{"from":"<span class=\"glyphicon glyphicon-ok-sign text-success\" style=\"font-weight:bold\"></span>","to":"Aktif"},{"from":"<span class=\"glyphicon glyphicon-remove-sign text-danger\" style=\"font-weight:bold\"></span>","to":"Inactive"}],"skipExportElements":[".sr-only",".hide"],"showConfirmAlert":true};
+var kvGridExp_12735912={"filename":"grid-export","showHeader":true,"showPageSummary":true,"showFooter":true};
+var kvGridExp_32e10259={"dialogLib":"krajeeDialog","gridOpts":kvGridExp_507a263c,"genOpts":kvGridExp_12735912,"alertMsg":"The HTML export file will be generated for download.","config":{"cssFile":["https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"]}};
+var kvGridExp_cd077bdc={"dialogLib":"krajeeDialog","gridOpts":kvGridExp_507a263c,"genOpts":kvGridExp_12735912,"alertMsg":"The CSV export file will be generated for download.","config":{"colDelimiter":",","rowDelimiter":"\r\n"}};
+var kvGridExp_cd58cfc1={"dialogLib":"krajeeDialog","gridOpts":kvGridExp_507a263c,"genOpts":kvGridExp_12735912,"alertMsg":"The TEXT export file will be generated for download.","config":{"colDelimiter":"\t","rowDelimiter":"\r\n"}};
+var kvGridExp_7fdcf31a={"dialogLib":"krajeeDialog","gridOpts":kvGridExp_507a263c,"genOpts":kvGridExp_12735912,"alertMsg":"The EXCEL export file will be generated for download.","config":{"worksheet":"ExportWorksheet","cssFile":""}};
+var kvGridExp_834a1f71={"dialogLib":"krajeeDialog","gridOpts":kvGridExp_507a263c,"genOpts":kvGridExp_12735912,"alertMsg":"The PDF export file will be generated for download.","config":{"mode":"UTF-8","format":"A4-L","destination":"D","marginTop":20,"marginBottom":20,"cssInline":".kv-wrap{padding:20px}","methods":{"SetHeader":[{"odd":{"L":{"content":"Yii2 Grid Export (PDF)","font-size":8,"color":"#333333"},"C":{"content":"Grid Export","font-size":16,"color":"#333333"},"R":{"content":"Generated: Wed, 30-Oct-2024","font-size":8,"color":"#333333"}},"even":{"L":{"content":"Yii2 Grid Export (PDF)","font-size":8,"color":"#333333"},"C":{"content":"Grid Export","font-size":16,"color":"#333333"},"R":{"content":"Generated: Wed, 30-Oct-2024","font-size":8,"color":"#333333"}}}],"SetFooter":[{"odd":{"L":{"content":"© Krajee Yii2 Extensions","font-size":8,"font-style":"B","color":"#999999"},"R":{"content":"[ {PAGENO} ]","font-size":10,"font-style":"B","font-family":"serif","color":"#333333"},"line":true},"even":{"L":{"content":"© Krajee Yii2 Extensions","font-size":8,"font-style":"B","color":"#999999"},"R":{"content":"[ {PAGENO} ]","font-size":10,"font-style":"B","font-family":"serif","color":"#333333"},"line":true}}]},"options":{"title":"Grid Export","subject":"PDF export generated by kartik-v/yii2-grid extension","keywords":"krajee, grid, export, yii2-grid, pdf"},"contentBefore":"","contentAfter":""}};
+var kvGridExp_e2727134={"dialogLib":"krajeeDialog","gridOpts":kvGridExp_507a263c,"genOpts":kvGridExp_12735912,"alertMsg":"The JSON export file will be generated for download.","config":{"colHeads":[],"slugColHeads":false,"jsonReplacer":function(k,v){return typeof(v)==='string'?$.trim(v):v},"indentSpace":4}};
+var kvGridInit_628b7aa7=function(){
+jQuery('#crud-datatable .export-html').gridexport(kvGridExp_32e10259);jQuery('#crud-datatable .export-csv').gridexport(kvGridExp_cd077bdc);jQuery('#crud-datatable .export-txt').gridexport(kvGridExp_cd58cfc1);jQuery('#crud-datatable .export-xls').gridexport(kvGridExp_7fdcf31a);jQuery('#crud-datatable .export-pdf').gridexport(kvGridExp_834a1f71);jQuery('#crud-datatable .export-json').gridexport(kvGridExp_e2727134);jQuery('#crud-datatable-container').resizableColumns('destroy').resizableColumns({"store":null,"resizeFromBody":false});
+};
+kvGridInit_628b7aa7();
+jQuery("#crud-datatable-pjax").on('pjax:timeout', function(e){e.preventDefault()}).on('pjax:send', function(){$("#crud-datatable-pjax").addClass('kv-grid-loading')}).off('pjax:complete.e824b85a').on('pjax:complete.e824b85a', function(){setTimeout(kvGridInit_628b7aa7, 2500);$("#crud-datatable-pjax").removeClass('kv-grid-loading');
+});
+jQuery('#crud-datatable').yiiGridView({"filterUrl":"\/smp\/daftar-sekolah\/index","filterSelector":"#crud-datatable-filters input, #crud-datatable-filters select","filterOnFocusOut":true});
+jQuery(document).pjax("#crud-datatable-pjax a", {"push":true,"replace":false,"timeout":1000,"scrollTo":false,"container":"#crud-datatable-pjax"});
+jQuery(document).off("submit", "#crud-datatable-pjax form[data-pjax]").on("submit", "#crud-datatable-pjax form[data-pjax]", function (event) {jQuery.pjax.submit(event, {"push":true,"replace":false,"timeout":1000,"scrollTo":false,"container":"#crud-datatable-pjax"});});
+});</script>    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            "use strict";
+            Core.init();
+        });
+        jQuery.fn.modal.Constructor.prototype.enforceFocus = function () {
+        };
+        jQuery(document).on('click', '[data-toggle="dropdown"]', function (e) {
+            e.preventDefault();
+            $(this).dropdown('toggle');
+        });
+        jQuery(document).on('click', '[data-toggle="tab"]', function (e) {
+            e.preventDefault();
+            $(this).tab('show')
+        });
+    </script>
+        <script async="" src="./ppdb smp_files/script.js.unduhan" data-website-id="6f7cbe80-0801-4ddc-8e27-303ef79dcb98"></script>
+    
+
+</body></html>
